@@ -13,6 +13,15 @@
 ; better for small and large numbers? 
 
 
+; Solution:
+; For very small numbers, the approximation may end too early
+; due to the comparatively large tolerance, thereby leading
+; to a significantly inaccurate result. While for very large
+; numbers, the given tolerance may take unbearable time or 
+; even impossible to reach since the approximation is too slow
+; or the value has gone beyond the machine's floating
+; point precision.
+
 (define (sqrt-iter guess x)
   (if (good-enough? guess x)
       guess
@@ -20,7 +29,8 @@
                  x)))
 
 (define (good-enough? guess x)
-  (< (abs (- (square guess ) x)) 0.001))
+  (< (abs (- (improve guess x) guess))
+     (abs (* guess 0.001))))
 
 (define (average x y)
   (/ (+ x y) 2))
