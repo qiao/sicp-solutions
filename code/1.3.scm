@@ -2,8 +2,7 @@
 ; Define a procedure that takes three numbers as arguments 
 ; and returns the sum of the squares of the two larger numbers. 
 
-(define (square x) (* x x))
-
+; Solution:
 ; The sum of the squares of the two larger numbers
 ; equals to the difference of 
 ; the sum of the squares of the three numbers and
@@ -13,3 +12,5 @@
         (square b) 
         (square c))
      (square (min a b c))))
+
+(define (square x) (* x x))
