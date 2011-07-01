@@ -9,3 +9,10 @@
 
 (define (product term a next b)
   (accumulate * 1 term a next b))
+
+(define (accumulate-iter combiner null-value term a next b)
+  (define (iter a acc)
+    (if (> a b)
+        acc
+        (iter (next a) (combiner (term a) acc))))
+  (iter a null-value))
