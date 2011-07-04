@@ -1,4 +1,4 @@
-; Suppost there are two intervals, namely a and b,
+; Suppose there are two intervals, namely a and b,
 ; where a = [ca - ta, ca + ta], b = [cb - tb, cb + tb]
 ; then a * b = [(ca - ta) * (cb - tb), (ca + ta) * (cb + tb)]
 ;            = [ca * cb - ca * tb - ta * cb + ta * tb,
