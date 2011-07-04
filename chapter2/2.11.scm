@@ -17,9 +17,9 @@
   (let ((xl (lower-bound x))
         (xu (upper-bound x))
         (yl (lower-bound y))
-        (yu (upper-bound y))
-        (xs (sign-pair xl xu))
-        (ys (sign-pair yl yu)))
+        (yu (upper-bound y)))
+    (let ((xs (sign-pair xl xu))
+          (ys (sign-pair yl yu)))
     (cond ((< xs 0)
            (cond ((< ys 0)                       ; - - - -
                   (make-interval (* xu yu)
@@ -51,4 +51,4 @@
                                  (* xu yu)))
                  (else                           ; + + + +
                   (make-interval (* xl yl)
-                                 (* xu yu))))))))
+                                 (* xu yu)))))))))
