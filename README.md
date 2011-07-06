@@ -4,7 +4,7 @@
 These are my solutions to Structure and Interpretation of Computer Programs, 2nd Edition. 
 
 ## Environment
-Most of the sources have been tested in **MIT/GNU Scheme**.
+Most of the codes have been tested in **MIT/GNU Scheme**.
 
 Version info:
 
