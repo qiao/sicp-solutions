@@ -45,7 +45,7 @@
   (cond ((=number? e 0) 1)
         ((=number? e 1) b)
         ((and (number? b) (number? e)) (expt b e))
-        (else (list '^ b e))))
+        (else (list '** b e))))
 
 
 (define (=number? exp num)
@@ -64,7 +64,7 @@
 (define (multiplicand p) (caddr p))
 
 (define (exponentiation? x)
-  (and (pair? x) (eq? (car x) '^)))
+  (and (pair? x) (eq? (car x) '**)))
 
 (define (base e) (cadr e))
 (define (exponent e) (caddr e))
