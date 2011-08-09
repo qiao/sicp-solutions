@@ -13,7 +13,7 @@
                          (multiplicand exp))))
         ((exponentiation? exp)
          (make-product
-           n
+           (exponent exp)
            (make-product
              (make-exponentiation 
                (base exp) 
