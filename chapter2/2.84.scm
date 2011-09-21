@@ -7,9 +7,9 @@
               (let ((a1 (car args))
                     (a2 (cadr args)))
                 (cond ((raise-to a1 a2)
-                       (apply-generic op (raise-to a1 a2)))
+                       (apply-generic op (raise-to a1 a2) a2))
                       ((raise-to a2 a1)
-                       (apply-generic op (raise-to a2 a1)))
+                       (apply-generic op (raise-to a2 a1) a1))
                       (else
                         (error "No method for these types")))))))))
 
