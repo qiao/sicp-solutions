@@ -39,3 +39,11 @@
          (or (get-coercion t type)
              (equal? type t)))
        types))
+
+
+;; Part b.
+;; There's a case in which the above strategy will not work:
+;; Consider three types, namely A, B and C, with only two possible coercions:
+;; A -> B and B -> C. It's not possible to choose any type in these three types
+;; to make all the other two types be coerced to it in a single step. And thus
+;; the above strategy will fail. 
