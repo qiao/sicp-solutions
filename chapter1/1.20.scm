@@ -42,7 +42,7 @@
 
 2
 
-;; `remainder' performed 8 times
+;; `remainder' performed 18 times
 
 
 ;; applicative order:
