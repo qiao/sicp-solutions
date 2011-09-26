@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage[paper=a4paper,vmargin=0.5in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{colorlinks}
+
+\begin{document}
+
+\title{SICP 1.16 Solution}
+\author{Xueqiao Xu}
+\date{\url{https://github.com/qiao/sicp-solutions}}
+\maketitle
+
+Let $T(n)$ denote the time used to compute $exp(n)$.\\
+
+For the original procedure, we have:
+
+\begin{eqnarray}
+    T(n) &=& T(n / 2) + c \nonumber \\
+         &=& T(n / 4) + c + c\nonumber \\
+         &=& T(n / 8) + c + c + c \nonumber \\
+         &=& T(n / 16) + c + c + c + c \nonumber \\
+         &=& \cdots \nonumber \\
+         &=& c\log{n} \nonumber \\
+         &=& \Theta(\log{n}) \nonumber
+\end{eqnarray}
+
+For the modified procedure, we have:
+
+\begin{eqnarray}
+    T(n) &=& 2T(n / 2) + c \nonumber \\
+         &=& 4T(n / 4) + 2c + c \nonumber \\
+         &=& 8T(n / 8) + 4c + 2c + c\nonumber \\
+         &=& \cdots \nonumber \\
+         &=& 2^{\log{n}}c \nonumber \\
+         &=& n\cdot c \nonumber \\
+         &=& \Theta(n) \nonumber
+\end{eqnarray}
+
+\end{document}
