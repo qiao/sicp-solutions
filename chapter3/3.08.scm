@@ -1,0 +1,10 @@
+(define (generate-f)
+  (let ((first #t))
+    (lambda (x)
+      (if (and first (= x 1))
+          (begin (set! first #f)
+                 1)
+          (begin (set! first #f)
+                 0)))))
+
+(define f (generate-f))
