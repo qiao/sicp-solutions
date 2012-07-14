@@ -1,0 +1,12 @@
+(define (let? exp) (tagged-list? exp 'let))
+(define (let-bindings exp) (cadr exp))
+(define (let-body exp) (cddr exp))
+(define (binding-var binding) (car binding))
+(define (binding-exp binding) (cdr binding))
+
+(define (let->combination exp)
+  (let ((bindings (let-bindings exp))
+        (body (let-body exp)))
+    (cons (make-lambda (map binding-var bindings)
+                       body))
+          (map binding-exp bindings)))
