@@ -9,6 +9,13 @@
                (cons-stream car2 (merge s1 (stream-cdr s2 w))))))))
 
 
+(define (weighted-pairs s1 s2 w)
+  (cons-stream
+    (list (stream-car s1) (stream-car s2))
+    (merge-weighted
+      (stream-map (lambda (x) (list (stream-car s1) x) (stream-cdr s2)))
+      (weighted-pairs (stream-cdr s1) (stream-cdr s2) w)
+      w)))
 
 ;; a.
 (define sa
@@ -16,7 +23,7 @@
           (lambda (pair)
             (+ (car pair)
                (cadr pair)))))
-    (merge-weighted integers integers weight)))
+    (weighted-pairs integers integers weight)))
 
 ;; b.
 (define sb
@@ -37,4 +44,4 @@
                     (not (divisible? x 3))
                     (not (divisible? x 5))))
              integers)))
-    (merge-weighted stream stream weight)))
+    (weighted-pairs stream stream weight)))
