@@ -21,7 +21,7 @@
         (type-to (type-tag to)))
     (if (equal? type-from type-to)
         from 
-        (let ((upper) (raise from))
+        (let ((upper (raise from)))
           (if upper
               (raise-to upper to)
               #f)))))
